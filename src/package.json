@@ -1,5 +1,5 @@
 {
-  "name": "@nstudio/nativescript-checkbox",
+  "name": "@akylas/nativescript-checkbox",
   "version": "2.0.2",
   "description": "NativeScript plugin for checkbox.",
   "main": "checkbox",
