@@ -6,8 +6,8 @@ import {
   Property,
   Style
 } from '@nativescript/core';
-import { BoxType } from './checkbox-common';
-import { CheckBoxInterface } from './index';
+import { BoxType } from './common';
+import { CheckBoxInterface } from '.';
 
 const checkBoxBackgroundColorProperty = new CssProperty<Style, string>({
   name: 'checkBoxBackgroundColor',
@@ -76,7 +76,7 @@ export class CheckBox extends Button implements CheckBoxInterface {
   _tintColor: string;
   _onFillColor: string;
   _fillColor: string;
-  private _iosCheckbox: BEMCheckBox;
+  nativeViewProtected: BEMCheckBox;
   private _delegate: BEMCheckBoxDelegateImpl;
   private _lineWidth: number = 1;
   private _hideBox: boolean;
@@ -86,48 +86,45 @@ export class CheckBox extends Button implements CheckBoxInterface {
   private _onAnimationType: number;
   private _offAnimationType: number;
 
-  constructor() {
-    super();
-    // just create with any width/height as XML view width/height is undefined at this point
-    // we modify width/height later below in onLoaded
-    this._iosCheckbox = BEMCheckBox.alloc().initWithFrame(
+  createNativeView() {
+    return  BEMCheckBox.alloc().initWithFrame(
       CGRectMake(0, 0, 80, 80)
     ) as BEMCheckBox;
   }
 
   set fillColor(color: string) {
     this._fillColor = color;
-    this._iosCheckbox.onFillColor = new Color(color).ios;
+    this.nativeViewProtected.onFillColor = new Color(color).ios;
   }
 
   set onFillColor(color: string) {
     this._onFillColor = color;
-    this._iosCheckbox.onFillColor = new Color(color).ios;
+    this.nativeViewProtected.onFillColor = new Color(color).ios;
   }
 
   set tintColor(color: string) {
     this._tintColor = color;
-    this._iosCheckbox.tintColor = new Color(color).ios;
+    this.nativeViewProtected.tintColor = new Color(color).ios;
   }
 
   set onTintColor(color: string) {
     this._onTintColor = color;
-    this._iosCheckbox.onTintColor = new Color(color).ios;
+    this.nativeViewProtected.onTintColor = new Color(color).ios;
   }
 
   set checkBoxBackgroundColor(color: any) {
     this._checkBoxBackgroundColor = color;
-    this._iosCheckbox.offFillColor = new Color(color).ios;
+    this.nativeViewProtected.offFillColor = new Color(color).ios;
   }
 
   set onCheckColor(color: string) {
     this._onCheckColor = color;
-    this._iosCheckbox.onCheckColor = new Color(color).ios;
+    this.nativeViewProtected.onCheckColor = new Color(color).ios;
   }
 
   [boxTypeProperty.setNative](value: any) {
-    if (this._iosCheckbox) {
-      this._iosCheckbox.boxType = value;
+    if (this.nativeViewProtected) {
+      this.nativeViewProtected.boxType = value;
     }
   }
 
@@ -136,45 +133,45 @@ export class CheckBox extends Button implements CheckBoxInterface {
   }
 
   [checkedProperty.setNative](value: boolean) {
-    this._iosCheckbox.setOnAnimated(value, true);
+    this.nativeViewProtected.setOnAnimated(value, true);
   }
 
   set checkedAnimated(value: boolean) {
-    this._iosCheckbox.setOnAnimated(value, true);
+    this.nativeViewProtected.setOnAnimated(value, true);
   }
 
   set lineWidth(value: number) {
-    this._iosCheckbox.lineWidth = value;
+    this.nativeViewProtected.lineWidth = value;
     this._lineWidth = value;
   }
 
   set hideBox(value: boolean) {
-    this._iosCheckbox.hideBox = value;
+    this.nativeViewProtected.hideBox = value;
     this._hideBox = value;
   }
 
   set animationDuration(value: number) {
-    this._iosCheckbox.animationDuration = value;
+    this.nativeViewProtected.animationDuration = value;
     this._animationDuration = value;
   }
 
   set onAnimationType(value: number) {
-    if (this._iosCheckbox)
-      this._iosCheckbox.onAnimationType = this._getAnimationType(value);
+    if (this.nativeViewProtected)
+      this.nativeViewProtected.onAnimationType = this._getAnimationType(value);
     else this._onAnimationType = value;
   }
 
   set offAnimationType(value: number) {
-    this._iosCheckbox.offAnimationType = this._getAnimationType(value);
+    this.nativeViewProtected.offAnimationType = this._getAnimationType(value);
     this._offAnimationType = value;
   }
 
   get nativeiOSCheckBox() {
-    return this._iosCheckbox;
+    return this.nativeViewProtected;
   }
 
   reload(value: boolean) {
-    this._iosCheckbox.reload();
+    this.nativeViewProtected.reload();
   }
   tapTimeout
   initNativeView() {
@@ -200,37 +197,37 @@ export class CheckBox extends Button implements CheckBoxInterface {
       fontSize = this.style.fontSize;
     }
 
-    this._iosCheckbox.delegate = this._delegate;
+    this.nativeViewProtected.delegate = this._delegate;
     // positioning
-    this._iosCheckbox.frame = CGRectMake(0, 0, fontSize, fontSize);
-    this._iosCheckbox.center = CGPointMake(
-      this._iosCheckbox.center.x,
+    this.nativeViewProtected.frame = CGRectMake(0, 0, fontSize, fontSize);
+    this.nativeViewProtected.center = CGPointMake(
+      this.nativeViewProtected.center.x,
       fontSize / 2 + 3
     );
     this.style.paddingLeft = fontSize + (fontSize > 20 ? 10 : 5);
     this.style.textAlignment = 'left';
 
     if (this._onCheckColor) {
-      this._iosCheckbox.onCheckColor = new Color(this._onCheckColor).ios;
+      this.nativeViewProtected.onCheckColor = new Color(this._onCheckColor).ios;
     }
 
     if (this._onFillColor) {
-      this._iosCheckbox.onFillColor = new Color(this._onFillColor).ios;
+      this.nativeViewProtected.onFillColor = new Color(this._onFillColor).ios;
     }
 
     if (this._onTintColor) {
-      this._iosCheckbox.onTintColor = new Color(this._onTintColor).ios;
+      this.nativeViewProtected.onTintColor = new Color(this._onTintColor).ios;
     }
 
     if (this._fillColor) {
-      this._iosCheckbox.onFillColor = new Color(this._fillColor).ios;
+      this.nativeViewProtected.onFillColor = new Color(this._fillColor).ios;
     }
 
     if (this._tintColor) {
-      this._iosCheckbox.tintColor = new Color(this._tintColor).ios;
+      this.nativeViewProtected.tintColor = new Color(this._tintColor).ios;
     }
 
-    this.nativeView.addSubview(this._iosCheckbox);
+    this.nativeView.addSubview(this.nativeViewProtected);
 
     if (typeof this._lineWidth !== 'undefined') {
       this.lineWidth = this._lineWidth;
@@ -253,7 +250,7 @@ export class CheckBox extends Button implements CheckBoxInterface {
   }
 
   disposeNativeView() {
-    this._iosCheckbox.delegate = null;
+    this.nativeViewProtected.delegate = null;
     this.removeEventListener('tap');
   }
 
