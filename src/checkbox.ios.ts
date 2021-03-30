@@ -176,12 +176,16 @@ export class CheckBox extends Button implements CheckBoxInterface {
   reload(value: boolean) {
     this._iosCheckbox.reload();
   }
-
+  tapTimeout
   initNativeView() {
     // allow label click to change the textbox
     this.addEventListener('tap', args => {
-      const checkbox = args.object as CheckBox;
-      checkbox.checked = !checkbox.checked;
+      //ensure we dont get 2 events if using UITapGestureRecognizer
+      this.tapTimeout = setTimeout(()=>{
+        this.tapTimeout = null;
+        const checkbox = args.object as CheckBox;
+        checkbox.checked = !checkbox.checked;
+    }, 10)
     });
 
     this._onAnimationType = 2;
@@ -307,6 +311,10 @@ class BEMCheckBoxDelegateImpl extends NSObject implements BEMCheckBoxDelegate {
   didTapCheckBox(checkBox: BEMCheckBox): void {
     const owner = this._owner.get();
     if (owner) {
+      if (owner.tapTimeout) {
+        clearTimeout(owner.tapTimeout)
+        owner.tapTimeout = null;
+      }
       checkedProperty.nativeValueChange(owner, checkBox.on);
     }
   }
