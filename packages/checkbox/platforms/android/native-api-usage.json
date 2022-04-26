@@ -1,0 +1,5 @@
+{
+    "uses": [
+        "androidx.appcompat.widget:AppCompatCheckBox*"
+    ]
+}

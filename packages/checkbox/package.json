@@ -1,0 +1,59 @@
+{
+    "name": "@nativescript-community/ui-checkbox",
+    "version": "2.0.5",
+    "description": "NativeScript plugin for checkbox.",
+    "main": "./index",
+    "sideEffects": false,
+    "typings": "./index.d.ts",
+    "scripts": {
+        "build": "npm run tsc && npm run readme",
+        "build.all": "npm run build && npm run build.angular",
+        "build.angular": "../../node_modules/.bin/ng-packagr -p ../../src/checkbox/angular/ng-package.json -c ../../src/checkbox/angular/tsconfig.json",
+        "readme": "../../node_modules/.bin/readme generate -c ../../tools/readme/blueprint.json",
+        "tsc": "../../node_modules/.bin/cpy '**/*.d.ts' '../../packages/checkbox' --parents --cwd=../../src/checkbox && ../../node_modules/.bin/tsc -skipLibCheck -d",
+        "clean": "../../node_modules/.bin/rimraf ./*.d.ts ./*.js ./*.js.map"
+    },
+    "nativescript": {
+        "platforms": {
+            "android": "6.0.0",
+            "ios": "6.0.0"
+        }
+    },
+    "keywords": [
+        "NativeScript",
+        "JavaScript",
+        "Android",
+        "iOS",
+        "RadListView",
+        "checkbox",
+        "collection view",
+        "grid view",
+        "grid list view",
+        "super grid",
+        "NativeScript UI",
+        "nativescript community",
+        "Angular",
+        "Vue.js",
+        "Vue.js Native",
+        "Vue Native",
+        "Svelte",
+        "Svelte Native",
+        "React",
+        "React NativeScript",
+        "preview|https://raw.githubusercontent.com/nativescript-community/ui-checkbox/master/images/demo-ios.gif|iOS Demo",
+        "preview|https://raw.githubusercontent.com/nativescript-community/ui-checkbox/master/images/demo-android.gif|Android Demo"
+    ],
+    "author": {
+        "name": "Brad Martin",
+        "email": "bradwaynemartin@gmail.com"
+    },
+    "bugs": {
+        "url": "https://github.com/nativescript-community/ui-checkbox/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nativescript-community/ui-checkbox"
+    },
+    "license": "ISC",
+    "readmeFilename": "README.md"
+}

@@ -1,0 +1,9 @@
+{    
+    "extends": "./tools/tsconfig",
+    "compilerOptions": {
+        "paths": {
+            "@nativescript-community/ui-checkbox": ["./src/checkbox"],
+            "@nativescript-community/ui-checkbox/*": ["./src/checkbox/*"]
+       },
+    }
+}
