@@ -26,18 +26,6 @@
     "make-changelog": "cd ../ && github_changelog_generator -u nstudio -p nativescript-checkbox",
     "clean.all": "cd ../demo && rimraf hooks node_modules platforms && cd ../demo-ng && rimraf hooks node_modules platforms && cd ../src && rimraf hooks node_modules"
   },
-  "lint-staged": {
-    "**/*.{js, css, ts, json, scss, html, xml, md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run tslint"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/nstudio/nativescript-checkbox.git"
@@ -76,7 +64,6 @@
     "@nativescript/types": "~7.0.3",
     "@nativescript/webpack": "~3.0.4",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
     "ng-packagr": "~10.1.0",
     "prettier": "^2.0.5",
     "prompt": "^1.0.0",
