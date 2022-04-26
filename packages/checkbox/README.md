@@ -123,7 +123,7 @@ Run the following command from the root of your project:
 ```XML
 <Page
   xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:CheckBox="@nstudio/nativescript-checkbox" loaded="pageLoaded">
+  xmlns:CheckBox="@nativecript-community/ui-checkbox" loaded="pageLoaded">
   <ActionBar title="Native Checkbox" />
   <StackLayout>
     <CheckBox:CheckBox checked="checkProp" text="myCheckText" fillColor="myCheckColor" id="myCheckbox" />
@@ -136,7 +136,7 @@ Run the following command from the root of your project:
 
 ```typescript
 
-import { CheckBox } from '@nstudio/nativescript-checkbox';
+import { CheckBox } from '@nativecript-community/ui-checkbox';
 import { topmost } from '@nativescript/core/ui/frame';
 
 public toggleCheck() {
@@ -154,7 +154,7 @@ public getCheckProp() {
 ### Angular Usage Sample:
 
 ```typescript
-import { TNSCheckBoxModule } from '@nstudio/nativescript-checkbox/angular';
+import { TNSCheckBoxModule } from '@nativecript-community/ui-checkbox/angular';
 
 @NgModule({
   imports: [TNSCheckBoxModule]
@@ -193,7 +193,7 @@ In your `main.js` (The file where the root Vue instance is created) register the
 ```js
 Vue.registerElement(
   'CheckBox',
-  () => require('@nstudio/nativescript-checkbox').CheckBox,
+  () => require('@nativecript-community/ui-checkbox').CheckBox,
   {
     model: {
       prop: 'checked',
