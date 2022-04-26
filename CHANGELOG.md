@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.7](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.6...v2.0.7) (2022-04-26)
+
+
+### Bug Fixes
+
+* vue fix for v-model ([c969d50](https://github.com/@nativescript-community/ui-checkbox/commit/c969d50ee8bd3e7bbec020dc5958d8a1b0790747))
+
+
+
+
+
 ## 2.0.6 (2022-04-26)
 
 
