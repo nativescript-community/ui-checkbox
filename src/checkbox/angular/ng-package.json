@@ -1,0 +1,9 @@
+{
+    "dest": "../../../packages/checkbox/angular",
+    "lib": {
+      "entryFile": "index.ts"
+    },
+    "allowedNonPeerDependencies": [
+      "."
+    ]
+}
