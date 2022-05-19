@@ -1,5 +1,6 @@
 {
     "uses": [
-        "androidx.appcompat.widget:AppCompatCheckBox*"
+        "androidx.appcompat.widget:AppCompatCheckBox*",
+        "android.widget:CompoundButton*"
     ]
 }
