@@ -1,4 +1,4 @@
-<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
+<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️--><!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
 <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -39,6 +39,9 @@
 
 [](#table-of-contents)
 
+
+[](#table-of-contents)
+
 ## Table of Contents
 
 * [Installation](#installation)
@@ -53,10 +56,19 @@
 	* [NativeScript-Vue Usage Sample](#nativescript-vue-usage-sample)
 * [Demos](#demos)
 * [Demos and Development](#demos-and-development)
-	* [Setup](#setup)
+	* [Repo Setup](#repo-setup)
 	* [Build](#build)
 	* [Demos](#demos-1)
+* [Contributing](#contributing)
+	* [Update repo ](#update-repo-)
+	* [Update readme ](#update-readme-)
+	* [Update doc ](#update-doc-)
+	* [Publish](#publish)
+	* [modifying submodules](#modifying-submodules)
 * [Questions](#questions)
+
+
+[](#installation)
 
 
 [](#installation)
@@ -75,7 +87,13 @@ Run the following command from the root of your project:
 
 [](#api)
 
+
+[](#api)
+
 ## API
+
+
+[](#properties)
 
 
 [](#properties)
@@ -90,9 +108,15 @@ Run the following command from the root of your project:
 
 [](#events)
 
+
+[](#events)
+
 ## Events
 
 - **checkedChange** - Use a reference to the CheckBox component to grab it's `checked` property when this event fires to see the new value.
+
+
+[](#api)
 
 
 [](#api)
@@ -104,11 +128,17 @@ Run the following command from the root of your project:
 
 [](#css-styling)
 
+
+[](#css-styling)
+
 ## Css Styling
 
 - **color** - set the text label color
 - **font-size** - checkbox is sized to text from here : default 15
 - **border-width** - set the line width of the checkbox element: iOS only
+
+
+[](#styling-android)
 
 
 [](#styling-android)
@@ -123,7 +153,7 @@ Run the following command from the root of your project:
 ```XML
 <Page
   xmlns="http://schemas.nativescript.org/tns.xsd"
-  xmlns:CheckBox="@nstudio/nativescript-checkbox" loaded="pageLoaded">
+  xmlns:CheckBox="@nativecript-community/ui-checkbox" loaded="pageLoaded">
   <ActionBar title="Native Checkbox" />
   <StackLayout>
     <CheckBox:CheckBox checked="checkProp" text="myCheckText" fillColor="myCheckColor" id="myCheckbox" />
@@ -136,7 +166,7 @@ Run the following command from the root of your project:
 
 ```typescript
 
-import { CheckBox } from '@nstudio/nativescript-checkbox';
+import { CheckBox } from '@nativecript-community/ui-checkbox';
 import { topmost } from '@nativescript/core/ui/frame';
 
 public toggleCheck() {
@@ -154,7 +184,7 @@ public getCheckProp() {
 ### Angular Usage Sample:
 
 ```typescript
-import { TNSCheckBoxModule } from '@nstudio/nativescript-checkbox/angular';
+import { TNSCheckBoxModule } from '@nativecript-community/ui-checkbox/angular';
 
 @NgModule({
   imports: [TNSCheckBoxModule]
@@ -193,7 +223,7 @@ In your `main.js` (The file where the root Vue instance is created) register the
 ```js
 Vue.registerElement(
   'CheckBox',
-  () => require('@nstudio/nativescript-checkbox').CheckBox,
+  () => require('@nativecript-community/ui-checkbox').CheckBox,
   {
     model: {
       prop: 'checked',
@@ -215,6 +245,9 @@ Use `checked` instead of `v-model`. [See #99](https://github.com/nstudio/natives
 
 [](#demos)
 
+
+[](#demos)
+
 ## Demos
 This repository includes Angular, Vue.js, and Svelte demos. In order to run these execute the following in your shell:
 ```shell
@@ -230,21 +263,24 @@ $ ns run ios|android
 
 [](#demos-and-development)
 
+
+[](#demos-and-development)
+
 ## Demos and Development
 
 
-### Setup
+### Repo Setup
 
-To run the demos, you must clone this repo **recursively**.
+The repo uses submodules. If you did not clone with ` --recursive` then you need to call
+```
+git submodule update --init
+```
 
-```
-git clone https://github.com/@nativescript-community/ui-checkbox.git --recursive
-```
+The package manager used to install and link dependencies must be `pnpm` or `yarn`. `npm` wont work.
 
-**Install Dependencies:**
-```bash
-npm i # or 'yarn install' or 'pnpm install'
-```
+To develop and test:
+if you use `yarn` then run `yarn`
+if you use `pnpm` then run `pnpm i`
 
 **Interactive Menu:**
 
@@ -253,10 +289,9 @@ To start the interactive menu, run `npm start` (or `yarn start` or `pnpm start`)
 ### Build
 
 ```bash
-npm run build
-
-npm run build.angular # or for Angular
+npm run build.all
 ```
+WARNING: it seems `yarn build.all` wont always work (not finding binaries in `node_modules/.bin`) which is why the doc explicitly uses `npm run`
 
 ### Demos
 
@@ -264,6 +299,164 @@ npm run build.angular # or for Angular
 npm run demo.[ng|react|svelte|vue].[ios|android]
 
 npm run demo.svelte.ios # Example
+```
+
+Demo setup is a bit special in the sense that if you want to modify/add demos you dont work directly in `demo-[ng|react|svelte|vue]`
+Instead you work in `demo-snippets/[ng|react|svelte|vue]`
+You can start from the `install.ts` of each flavor to see how to register new demos 
+
+
+[](#contributing)
+
+
+[](#contributing)
+
+## Contributing
+
+### Update repo 
+
+You can update the repo files quite easily
+
+First update the submodules
+
+```bash
+npm run update
+```
+
+Then commit the changes
+Then update common files
+
+```bash
+npm run sync
+```
+Then you can run `yarn|pnpm`, commit changed files if any
+
+### Update readme 
+```bash
+npm run readme
+```
+
+### Update doc 
+```bash
+npm run doc
+```
+
+### Publish
+
+The publishing is completely handled by `lerna` (you can add `-- --bump major` to force a major release)
+Simply run 
+```shell
+npm run publish
+```
+
+### modifying submodules
+
+The repo uses https:// for submodules which means you won't be able to push directly into the submodules.
+One easy solution is t modify `~/.gitconfig` and add
+```
+[url "ssh://git@github.com/"]
+	pushInsteadOf = https://github.com/
+```
+
+
+[](#questions)
+
+
+[](#questions)
+
+## Questions
+
+If you have any questions/issues/comments please feel free to create an issue or start a conversation in the [NativeScript Community Discord](https://nativescript.org/discord).
+
+[](#demos-and-development)
+
+## Demos and Development
+
+
+### Repo Setup
+
+The repo uses submodules. If you did not clone with ` --recursive` then you need to call
+```
+git submodule update --init
+```
+
+The package manager used to install and link dependencies must be `pnpm` or `yarn`. `npm` wont work.
+
+To develop and test:
+if you use `yarn` then run `yarn`
+if you use `pnpm` then run `pnpm i`
+
+**Interactive Menu:**
+
+To start the interactive menu, run `npm start` (or `yarn start` or `pnpm start`). This will list all of the commonly used scripts.
+
+### Build
+
+```bash
+npm run build.all
+```
+WARNING: it seems `yarn build.all` wont always work (not finding binaries in `node_modules/.bin`) which is why the doc explicitly uses `npm run`
+
+### Demos
+
+```bash
+npm run demo.[ng|react|svelte|vue].[ios|android]
+
+npm run demo.svelte.ios # Example
+```
+
+Demo setup is a bit special in the sense that if you want to modify/add demos you dont work directly in `demo-[ng|react|svelte|vue]`
+Instead you work in `demo-snippets/[ng|react|svelte|vue]`
+You can start from the `install.ts` of each flavor to see how to register new demos 
+
+
+[](#contributing)
+
+## Contributing
+
+### Update repo 
+
+You can update the repo files quite easily
+
+First update the submodules
+
+```bash
+npm run update
+```
+
+Then commit the changes
+Then update common files
+
+```bash
+npm run sync
+```
+Then you can run `yarn|pnpm`, commit changed files if any
+
+### Update readme 
+```bash
+npm run readme
+```
+
+### Update doc 
+```bash
+npm run doc
+```
+
+### Publish
+
+The publishing is completely handled by `lerna` (you can add `-- --bump major` to force a major release)
+Simply run 
+```shell
+npm run publish
+```
+
+### modifying submodules
+
+The repo uses https:// for submodules which means you won't be able to push directly into the submodules.
+One easy solution is t modify `~/.gitconfig` and add
+```
+[url "ssh://git@github.com/"]
+	pushInsteadOf = https://github.com/
 ```
 
 [](#questions)
