@@ -1,4 +1,4 @@
-import { Button, Color, CssProperty, Property, Style, booleanConverter } from '@nativescript/core';
+import { Button, Color, CSSType, CssProperty, Property, Style, booleanConverter } from '@nativescript/core';
 import { CheckBoxInterface } from '.';
 export enum BoxType {
     circle = 'circle',
@@ -37,6 +37,7 @@ export const checkedProperty = new Property<CheckBoxBase, boolean>({
     // valueChanged: onCheckedPropertyChanged
 });
 
+@CSSType('CheckBox')
 export abstract class CheckBoxBase extends Button implements CheckBoxInterface {
     checked: boolean;
     boxType: any;
