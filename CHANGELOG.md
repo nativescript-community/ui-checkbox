@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.9](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.8...v2.0.9) (2023-05-24)
+
+
+### Bug Fixes
+
+* added css class for CheckBox ([248dad7](https://github.com/@nativescript-community/ui-checkbox/commit/248dad7e5e9ecd51113670000a5b206254067e93))
+
+
+
+
+
 ## [2.0.8](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.7...v2.0.8) (2022-05-19)
 
 
