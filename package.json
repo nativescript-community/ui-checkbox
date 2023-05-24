@@ -16,15 +16,15 @@
         "build.all": "lerna run build.all",
         "build.angular": "lerna run build.angular",
         "build.win": "lerna run build-win",
-        "clean": "rimraf 'packages/**/*.d.ts' 'packages/**/*.js' 'packages/**/*.js.map' 'packages/**/*.metadata.json' 'packages/**/*.ngsummary.json' 'packages/**/*.mjs' 'packages/**/*.mjs.map' 'packages/**/node_modules' 'packages/**/angular/package.json' 'package-lock.json' 'pnpm-lock.yaml' 'node_modules'",
+        "clean": "rimraf 'packages/**/*.d.ts' 'packages/**/*.js' 'packages/**/*.js.map' 'packages/**/*.metada' 'packages/**/angular/ng-package.json'",
         "commitmsg": "commitlint -e $GIT_PARAMS",
-        "demo.ng.android": "cd ./demo-ng && ns run android --no-hmr",
+        "demo.ng.android": "cd ./demo-ng && ns run android --no-hmr --env.watchNodeModules",
         "demo.ng.clean": "cd ./demo-ng && ns clean",
-        "demo.ng.ios": "cd ./demo-ng && ns run ios --no-hmr",
+        "demo.ng.ios": "cd ./demo-ng && ns run ios --no-hmr --env.watchNodeModules",
         "postinstall": "npm run setup",
         "prepare": "npm run setup",
-        "publish": "npm run setup && npm run build.all && lerna publish --create-release=github --force-publish",
-        "readme": "node ./tools/readme.js",
+        "publish": "npm run clean ; npm run build.all ; npm run readme ; npm run doc ; npm run commit_readme_doc_changes ; lerna publish",
+        "readme": "lerna run readme && node ./tools/readme.js",
         "setup": "npm run submodules && ts-patch install",
         "start": "./node_modules/.bin/ntl -A -s 15 -o",
         "submodules": "git submodule update --init",
@@ -32,7 +32,10 @@
         "sync.test": "node ./tools/sync.js",
         "tsc": "cpy '**/*.d.ts' '../plugin' --parents --cwd=src && tsc -skipLibCheck -d",
         "update": "node ./tools/update.js",
-        "watch": "npm run tsc -- -w"
+        "watch": "npm run tsc -- -w",
+        "fullclean": "npm run clean && rimraf 'packages/**/node_modules' 'demo-*/hooks' 'demo-*/node_modules' 'package-lock.json' 'pnpm-lock.yaml' 'node_modules'",
+        "doc": "node tools/builddoc.mjs",
+        "commit_readme_doc_changes": "git add docs *.md ; git commit -m \"readme/doc\""
     },
     "commitlint": {
         "extends": [
@@ -52,5 +55,19 @@
             "demo.ng.ios": "Runs the Angular demo on iOS.",
             "watch": "Watch for changes in the plugin source and re-build."
         }
+    },
+    "workspaces": [
+        "packages/*",
+        "demo-vue",
+        "demo-ng",
+        "demo-svelte",
+        "demo-react",
+        "demo-snippets"
+    ],
+    "engines": {
+        "npm": "please use yarn or pnpm",
+        "yarn": ">=1.19.1",
+        "pnpm": ">=7.0.0",
+        "node": "^14.20.0 || ^16.13.0 || >=18.10.0"
     }
 }
