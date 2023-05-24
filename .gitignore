@@ -21,9 +21,10 @@ yarn-error.log*
 .LSOverride
 .idea
 .cloud
+.gradle
 .project
+.yarn
 tmp/
-package-lock.json
 
 !.eslintrc.js
 !.prettierrc.js
@@ -42,6 +43,7 @@ build
 Pods
 !packages/platforms
 /packages/**/*.aar
+/demo-snippets/**/*.aar
 *.xcuserdatad
 /packages/README.md
 packages/**/*js.map
@@ -51,6 +53,5 @@ packages/*.ngsummary.json
 packages/*.metadata.json
 packages/angular
 packages/typings
-pnpm-lock.yaml
 
 /blueprint.md
