@@ -68,6 +68,9 @@ export class CheckBox extends CheckBoxBase {
     [tintColorProperty.setNative](value: string | Color) {
         this._iosCheckbox.tintColor = getIOSColor(value);
     }
+    [onTintColorProperty.setNative](value: string | Color) {
+        this._iosCheckbox.onTintColor = getIOSColor(value);
+    }
     [onCheckColorProperty.setNative](value: string | Color) {
         this._iosCheckbox.onCheckColor = getIOSColor(value);
     }
