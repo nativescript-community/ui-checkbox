@@ -3,41 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [2.0.9](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.8...v2.0.9) (2023-05-24)
+## [2.0.10](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.9...v2.0.10) (2023-11-02)
 
+### Bug Fixes
+
+* **ios:** non working onTintColor ([fff44d5](https://github.com/@nativescript-community/ui-checkbox/commit/fff44d51f8fb33dbdfa20dc975787f597f7aa360))
+
+## [2.0.9](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.8...v2.0.9) (2023-05-24)
 
 ### Bug Fixes
 
 * added css class for CheckBox ([248dad7](https://github.com/@nativescript-community/ui-checkbox/commit/248dad7e5e9ecd51113670000a5b206254067e93))
 
-
-
-
-
 ## [2.0.8](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.7...v2.0.8) (2022-05-19)
-
 
 ### Bug Fixes
 
 * **android:** native-api-usage ([de9c2b5](https://github.com/@nativescript-community/ui-checkbox/commit/de9c2b51a47940127480c9a303f43290e50b5d5c))
 
-
-
-
-
 ## [2.0.7](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.6...v2.0.7) (2022-04-26)
-
 
 ### Bug Fixes
 
 * vue fix for v-model ([c969d50](https://github.com/@nativescript-community/ui-checkbox/commit/c969d50ee8bd3e7bbec020dc5958d8a1b0790747))
 
-
-
-
-
 ## 2.0.6 (2022-04-26)
-
 
 ### Bug Fixes
 
@@ -47,7 +37,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * npm ref in demo ([06f3769](https://github.com/@nativescript-community/ui-checkbox/commit/06f376992615348ec670936116ada59e16fa4c34))
 * publish grunt script for Podfile ([4cf23f3](https://github.com/@nativescript-community/ui-checkbox/commit/4cf23f32752c7b67bca66a61f951db3a7fde7993))
 
-
 ### Features
 
 * Angular AoT support ([1308dfa](https://github.com/@nativescript-community/ui-checkbox/commit/1308dfa87e28120e39a9b6240953915912d4e721))
@@ -56,7 +45,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **iOS:** wip support ([0979850](https://github.com/@nativescript-community/ui-checkbox/commit/0979850b95ac55447675c8758107a996fc4c595d))
 * Nativescript-Angular 4.4.x support ([ca8a99f](https://github.com/@nativescript-community/ui-checkbox/commit/ca8a99fa4e597f66b030880f9b373b6736808cde))
 * support for AoT Angular plus added build scripts ([c8c53ef](https://github.com/@nativescript-community/ui-checkbox/commit/c8c53effeffd1728aa8c0fd05708f8c698563ed0))
-
 
 ### Reverts
 
