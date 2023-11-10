@@ -1,6 +1,6 @@
 {
     "name": "@nativescript-community/ui-checkbox",
-    "version": "2.0.10",
+    "version": "2.0.11",
     "description": "NativeScript plugin for checkbox.",
     "main": "./index",
     "sideEffects": false,
