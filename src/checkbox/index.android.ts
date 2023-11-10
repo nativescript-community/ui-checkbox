@@ -86,7 +86,6 @@ export class CheckBox extends CheckBoxBase {
                 onCheckedChanged: (sender, isChecked) => {
                     const owner = that.get();
                     if (owner && !owner.ignoreChange) {
-                        console.log('onCheckedChanged', isChecked);
                         checkedProperty.nativeValueChange(owner, isChecked);
                     }
                 }
