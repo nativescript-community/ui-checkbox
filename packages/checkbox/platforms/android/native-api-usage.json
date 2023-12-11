@@ -1,6 +1,7 @@
 {
     "uses": [
-        "androidx.appcompat.widget:AppCompatCheckBox*",
-        "android.widget:CompoundButton*"
+        "androidx.appcompat.widget:AppCompatRadioButton",
+        "androidx.appcompat.widget:AppCompatCheckBox",
+        "android.widget:CompoundButton"
     ]
 }
