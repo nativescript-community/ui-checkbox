@@ -3,16 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [2.0.11](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.10...v2.0.11) (2023-11-10)
+## [2.0.12](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.11...v2.0.12) (2023-12-11)
 
+**Note:** Version bump only for package ui-checkbox
+
+## [2.0.11](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.10...v2.0.11) (2023-11-10)
 
 ### Bug Fixes
 
 * **android:** removed log ([45da069](https://github.com/@nativescript-community/ui-checkbox/commit/45da0698d2da2b56df7d74025a7a4bb0ab110bef))
-
-
-
-
 
 ## [2.0.10](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.9...v2.0.10) (2023-11-02)
 
