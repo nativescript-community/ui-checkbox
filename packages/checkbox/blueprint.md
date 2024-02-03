@@ -67,15 +67,15 @@ Run the following command from the root of your project:
 ```typescript
 
 import { CheckBox } from '@nativecript-community/ui-checkbox';
-import { topmost } from '@nativescript/core/ui/frame';
+import { Frame } from '@nativescript/core';
 
 public toggleCheck() {
-  const checkBox = topmost().getViewById('yourCheckBoxId');
+  const checkBox = Frame.topmost().getViewById('yourCheckBoxId');
   checkBox.toggle();
 }
 
 public getCheckProp() {
-  const checkBox = topmost().getViewById('yourCheckBoxId');
+  const checkBox = Frame.topmost().getViewById('yourCheckBoxId');
   console.log('checked prop value = ' + checkBox.checked);
 }
 
