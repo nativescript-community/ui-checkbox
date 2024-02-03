@@ -81,7 +81,7 @@ public getCheckProp() {
 
 ```
 
-### Angular Usage Sample:
+### Angular Usage Example
 
 ```typescript
 import { TNSCheckBoxModule } from '@nativecript-community/ui-checkbox/angular';
@@ -116,9 +116,9 @@ export class SomeComponent {
 </StackLayout>
 ```
 
-### NativeScript-Vue Usage Sample
+### NativeScript-Vue Usage Example
 
-In your `main.js` (The file where the root Vue instance is created) register the element
+In your `main.js` (The file where the root Vue instance is created) register the element:
 
 ```js
 Vue.registerElement(
@@ -141,6 +141,23 @@ And in your template, use it as:
 
 Use `checked` instead of `v-model`. [See #99](https://github.com/nstudio/nativescript-checkbox/issues/99).
 
+### Svelte Native Usage Example
+
+In your `app.ts` (the file where the root Svelte instance is created), add the following before the line containing `svelteNativeNoFrame()` to register a new element:
+
+```ts
+registerNativeViewElement('checkBox', () => require('@nativescript-community/ui-checkbox').CheckBox);
+```
+
+And in your Svelte templates, use it as:
+
+```svelte
+<script>
+  let isChecked = false;
+</script>
+
+<checkBox boxType="circle" bind:checked={isChecked} text="Your label" fontSize="17px" class="your-classes" />
+```
 
 ## Demos
 This repository includes Angular, Vue.js, and Svelte demos. In order to run these execute the following in your shell:
