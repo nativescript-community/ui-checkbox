@@ -156,7 +156,7 @@ And in your Svelte templates, use it as:
   let isChecked = false;
 </script>
 
-<checkBox boxType="circle" bind:checked={isChecked} text="Your label" fontSize="17px" class="your-classes" />
+<checkBox boxType="circle" bind:checked={isChecked} text="Your label" class="your-classes" />
 ```
 
 ## Demos
