@@ -2,7 +2,6 @@
     "name": "@nativescript-community/template-snippet",
     "private": true,
     "version": "0.0.1",
-    "private": true,
     "dependencies": {
         "@nativescript-community/ui-checkbox": "*"
     }
