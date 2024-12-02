@@ -1,12 +1,12 @@
 {
     "version": "1.0.0",
-    "homepage": "https://github.com/@nativescript-community/ui-checkbox#readme",
+    "homepage": "https://github.com/nativescript-community/ui-checkbox#readme",
     "bugs": {
-        "url": "https://github.com/@nativescript-community/ui-checkbox/issues"
+        "url": "https://github.com/nativescript-community/ui-checkbox/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/@nativescript-community/ui-checkbox.git"
+        "url": "git+https://github.com/nativescript-community/ui-checkbox.git"
     },
     "license": "ISC",
     "author": "",
