@@ -19,6 +19,54 @@ export class CheckBox extends View {
      */
     checked: boolean;
 
+    fillColor: Color;
+    tintColor: Color;
+
+    /**
+     * iOS only
+     */
+    onCheckColor: Color;
+
+    /**
+     * iOS only
+     */
+    onTintColor: Color;
+
+    /**
+     * iOS only
+     */
+    onFillColor: Color;
+
+    /**
+     * iOS only
+     */
+    boxType: number;
+
+    /**
+     * iOS only
+     */
+    lineWidth: number;
+
+    /**
+     * iOS only
+     */
+    onAnimationType: number;
+
+    /**
+     * iOS only
+     */
+    offAnimationType: number;
+
+    /**
+     * iOS only
+     */
+    animationDuration: number;
+
+    /**
+     * iOS only
+     */
+    hideBox: boolean;
+
     /**
      * Change the checked state of the view to the inverse of its current state.
      */

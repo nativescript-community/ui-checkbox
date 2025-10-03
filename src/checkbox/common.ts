@@ -1,32 +1,17 @@
-import { Button, Color, CSSType, CssProperty, Property, Style, booleanConverter } from '@nativescript/core';
+import { CSSType, Color, Property, Style, View, booleanConverter } from '@nativescript/core';
 import { CheckBoxInterface } from '.';
 export enum BoxType {
     circle = 'circle',
     square = 'square'
 }
 
-export const cssProperty = (target: Object, key: string | symbol) => {
-    Object.defineProperty(target, key, {
-        get() {
-            return this.style[key];
-        },
-        set(newVal) {
-            this.style[key] = newVal;
-        },
-        enumerable: true,
-        configurable: true
-    });
-};
-
-export const tintColorProperty = new CssProperty<Style, string>({
+export const tintColorProperty = new Property<CheckBoxBase, string>({
     name: 'tintColor',
-    cssName: 'tint-color',
     valueConverter: (v) => String(v)
 });
 
-export const fillColorProperty = new CssProperty<Style, string>({
+export const fillColorProperty = new Property<CheckBoxBase, string>({
     name: 'fillColor',
-    cssName: 'fill-color',
     valueConverter: (v) => String(v)
 });
 
@@ -38,11 +23,11 @@ export const checkedProperty = new Property<CheckBoxBase, boolean>({
 });
 
 @CSSType('CheckBox')
-export abstract class CheckBoxBase extends Button implements CheckBoxInterface {
+export abstract class CheckBoxBase extends View implements CheckBoxInterface {
     checked: boolean;
     boxType: any;
-    @cssProperty fillColor: string | Color;
-    @cssProperty tintColor: string | Color;
+    fillColor: string | Color;
+    tintColor: string | Color;
 
     abstract toggle(): void;
     _onCheckedPropertyChanged(checkbox: CheckBoxBase, oldValue, newValue) {
@@ -53,5 +38,5 @@ export abstract class CheckBoxBase extends Button implements CheckBoxInterface {
     }
 }
 checkedProperty.register(CheckBoxBase);
-fillColorProperty.register(Style);
-tintColorProperty.register(Style);
+fillColorProperty.register(CheckBoxBase);
+tintColorProperty.register(CheckBoxBase);
