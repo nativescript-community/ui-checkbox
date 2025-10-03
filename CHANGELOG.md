@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.13 (2025-10-03)
+
+### Features
+
+* Angular AoT support ([be21dbb](https://github.com/nativescript-community/ui-checkbox/commit/be21dbb600a2e5d34c764fa3c59dd63b856aa82c))
+* **Angular:** FormsModule + ReactiveFormsModule support via TNSCheckBoxModule ([6365174](https://github.com/nativescript-community/ui-checkbox/commit/6365174773e94958b91a5d215bdce13bc2b70e1d))
+* **Angular:** typings for angular support ([a3aef5d](https://github.com/nativescript-community/ui-checkbox/commit/a3aef5dd68857305c1f09464190dcc3178746649))
+* **ios:** BREAKING CHANGE the checkbox is not a button anymore but a simple checkbox which fixes a lot of issues! ([f68e2ca](https://github.com/nativescript-community/ui-checkbox/commit/f68e2caf3c2450910b7fbb2784633cd018d348c3))
+* **iOS:** wip support ([117f832](https://github.com/nativescript-community/ui-checkbox/commit/117f8326870a926579869824bd3f710722d4ae5a))
+* Nativescript-Angular 4.4.x support ([1b7a5da](https://github.com/nativescript-community/ui-checkbox/commit/1b7a5dabcad3e508a0ba3d341f6bc50004355dbe))
+* support for AoT Angular plus added build scripts ([e8fe8b7](https://github.com/nativescript-community/ui-checkbox/commit/e8fe8b796cf2bf77e05e17614aaaab86bccdc96c))
+
+### Bug Fixes
+
+* added css class for CheckBox ([a920f2d](https://github.com/nativescript-community/ui-checkbox/commit/a920f2de3a727adf168e7cf624ea45ad80c6e4df))
+* **android:** native-api-usage ([84a3ee3](https://github.com/nativescript-community/ui-checkbox/commit/84a3ee309bacb64afb205c2ab789e4064cfad3f8))
+* **android:** removed log ([0189bfc](https://github.com/nativescript-community/ui-checkbox/commit/0189bfcc2fd341dc348676e24501a56f36619d13))
+* angular build ([e4ad92c](https://github.com/nativescript-community/ui-checkbox/commit/e4ad92c3cba1894c3673659a685c30b336d2a3ff))
+* **ios:** ios fix ([5cc7f49](https://github.com/nativescript-community/ui-checkbox/commit/5cc7f493fadbf7cb1ae050f1918a40705b391574))
+* **ios:** non working onTintColor ([0a00674](https://github.com/nativescript-community/ui-checkbox/commit/0a0067479f8d4fefbf3ce5f04ebb01404eb006e5))
+* **ios:** working with @akylas/nativescript ([7b0fa87](https://github.com/nativescript-community/ui-checkbox/commit/7b0fa8741e439d0e9c59f804dbfe53cbe9d0c453))
+* npm ref in demo ([f7f9673](https://github.com/nativescript-community/ui-checkbox/commit/f7f9673779b326d832cf3543a7346451f4d282ae))
+* publish grunt script for Podfile ([236d4a8](https://github.com/nativescript-community/ui-checkbox/commit/236d4a8c93b30549d59f720b87a6d3c651587040))
+* vue fix for v-model ([b4f4292](https://github.com/nativescript-community/ui-checkbox/commit/b4f429236675b0b531acb28ca670fa9eafa918fb))
+
+### Reverts
+
+* tns-core-modules peerDependencies ([a9fb79c](https://github.com/nativescript-community/ui-checkbox/commit/a9fb79c1d3291f2d0c9b8840497fa57620c5b190))
+* tns-core-modules to ~3.0.0 ([8e43301](https://github.com/nativescript-community/ui-checkbox/commit/8e433011a2c6205d3ed1dc336a8b657480ccb628))
+
 ## [2.0.12](https://github.com/@nativescript-community/ui-checkbox/compare/v2.0.11...v2.0.12) (2023-12-11)
 
 **Note:** Version bump only for package ui-checkbox

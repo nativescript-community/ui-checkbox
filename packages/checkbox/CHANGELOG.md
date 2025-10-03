@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.13 (2025-10-03)
+
+### Bug Fixes
+
+* **android:** native-api-usage ([84a3ee3](https://github.com/nativescript-community/ui-checkbox/commit/84a3ee309bacb64afb205c2ab789e4064cfad3f8))
+
 ## [2.0.12](https://github.com/nativescript-community/ui-checkbox/compare/v2.0.11...v2.0.12) (2023-12-11)
 
 **Note:** Version bump only for package @nativescript-community/ui-checkbox
