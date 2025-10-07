@@ -50,9 +50,8 @@ export class CheckedValueAccessor extends BaseValueAccessor<CheckableView> {
 }
 
 @NgModule({
-    declarations: [CheckedValueAccessor],
     providers: [],
-    imports: [FormsModule],
+    imports: [CheckedValueAccessor, FormsModule],
     exports: [FormsModule, CheckedValueAccessor]
 })
 export class CheckBoxModule {}
