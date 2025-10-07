@@ -8,7 +8,7 @@
     "scripts": {
         "build": "npm run tsc && npm run readme",
         "build.all": "npm run build && npm run build.angular",
-        "build.angular": "../../node_modules/.bin/ng-packagr -p ../../src/checkbox/angular/ng-package.json -c ../../src/checkbox/angular/tsconfig.json",
+        "build.angular": "../../node_modules/.bin/ng-packagr -p ../../src/checkbox/angular/ng-package.json -c ../../src/checkbox/angular/tsconfig.json && rm angular/.npmignore",
         "readme": "../../node_modules/.bin/readme generate -c ../../tools/readme/blueprint.json",
         "tsc": "../../node_modules/.bin/cpy '**/*.d.ts' '../../packages/checkbox' --parents --cwd=../../src/checkbox && ../../node_modules/.bin/tsc -skipLibCheck -d",
         "clean": "../../node_modules/.bin/rimraf ./*.d.ts ./*.js ./*.js.map"

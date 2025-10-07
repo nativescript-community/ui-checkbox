@@ -52,9 +52,8 @@ Pods
 /packages/README.md
 packages/**/*js.map
 packages/**/*js
-packages/angular
 packages/typings
-packages/**/angular/*.json
+packages/**/angular
 packages/**/*.ngsummary.json
 packages/**/*.metadata.json
 
