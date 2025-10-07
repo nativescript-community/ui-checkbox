@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.15](https://github.com/nativescript-community/ui-checkbox/compare/v2.0.14...v2.0.15) (2025-10-07)
+
+### Bug Fixes
+
+* angular build fix ([c3908cd](https://github.com/nativescript-community/ui-checkbox/commit/c3908cd01b75bcecee4284a28b8da799a95353af))
+
 ## [2.0.14](https://github.com/nativescript-community/ui-checkbox/compare/v2.0.13...v2.0.14) (2025-10-03)
 
 **Note:** Version bump only for package ui-checkbox
