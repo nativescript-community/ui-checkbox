@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.17](https://github.com/nativescript-community/ui-checkbox/compare/v2.0.16...v2.0.17) (2026-01-06)
+
+### Bug Fixes
+
+* **android:** regression fix ([09250e6](https://github.com/nativescript-community/ui-checkbox/commit/09250e6123df88bf332d7a417a939b85fd7835dc))
+
 ## [2.0.16](https://github.com/nativescript-community/ui-checkbox/compare/v2.0.15...v2.0.16) (2025-10-07)
 
 **Note:** Version bump only for package ui-checkbox
