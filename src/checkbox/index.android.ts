@@ -40,7 +40,7 @@ export class CheckBox extends CheckBoxBase {
         super.initNativeView();
         this.onCheckedChangeListener = new android.widget.CompoundButton.OnCheckedChangeListener({
             onCheckedChanged: (sender, isChecked) => {
-                if (this.ignoreChange && this.isLoaded) {
+                if (!this.ignoreChange && this.isLoaded) {
                     checkedProperty.nativeValueChange(this, isChecked);
                 }
             }
