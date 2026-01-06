@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.18](https://github.com/nativescript-community/ui-checkbox/compare/v2.0.17...v2.0.18) (2026-01-06)
+
+**Note:** Version bump only for package @nativescript-community/ui-checkbox
+
 ## [2.0.17](https://github.com/nativescript-community/ui-checkbox/compare/v2.0.16...v2.0.17) (2026-01-06)
 
 **Note:** Version bump only for package @nativescript-community/ui-checkbox
